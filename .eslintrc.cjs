@@ -1,15 +1,38 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
+  parserOptions: {
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
+  },
+  extends: ["prettier", "plugin:react-hooks/recommended"],
+  plugins: ["@typescript-eslint/eslint-plugin", "react", "prettier", "json-format", "simple-import-sort"],
+  ignorePatterns: [".eslintrc.js", "public", "node_modules", ".cache", ".vscode"],
   rules: {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "no-trailing-spaces": "warn",
-    "@typescript-eslint/no-explicit-any": "warn", // any 경고
-    "@typescript-eslint/no-empty-function": "warn", //
+    "no-unused-vars": "error",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        prefer: "type-imports",
+        disallowTypeAnnotations: false,
+      },
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        singleQuote: false,
+        semi: true,
+        tabWidth: 2,
+        useTabs: false,
+        trailingComma: "all",
+        printWidth: 100,
+        arrowParens: "always",
+      },
+      {
+        usePrettierrc: false,
+      },
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
   },
 };
