@@ -12,7 +12,10 @@ module.exports = {
   siteMetadata: {
     title: `윤수현의 기술 블로그`,
     description: `주니어 프론트엔드 개발자 윤수현의 기술 블로그입니다.`,
-    siteUrl: `"https://yunsoohyun.com`,
+    siteUrl: `https://yunsoohyun-dev/`,
+    social: {
+      twitter: `kylemathews`,
+    },
   },
   plugins: [
     `gatsby-plugin-image`,
