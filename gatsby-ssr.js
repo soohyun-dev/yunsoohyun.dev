@@ -7,6 +7,7 @@
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
+// eslint-disable-next-line no-undef
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}
+  setHtmlAttributes({ lang: `en` });
+};

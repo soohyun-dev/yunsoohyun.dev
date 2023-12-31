@@ -7,24 +7,20 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+// eslint-disable-next-line no-undef
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `윤수현의 기술 블로그`,
+    description: `주니어 프론트엔드 개발자 윤수현의 기술 블로그입니다.`,
+    siteUrl: `"https://yunsoohyun.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
@@ -33,6 +29,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
+        // eslint-disable-next-line no-undef
         path: `${__dirname}/src/images`,
       },
     },
@@ -83,8 +80,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `{
               allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
@@ -122,4 +119,4 @@ module.exports = {
       },
     },
   ],
-}
+};
