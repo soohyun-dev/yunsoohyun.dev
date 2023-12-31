@@ -1,7 +1,9 @@
+import { Box } from "@chakra-ui/react";
+
 export const BaseHeader = () => {
   return (
-    <div>
+    <Box>
       <p>블로그</p>
-    </div>
+    </Box>
   );
 };
